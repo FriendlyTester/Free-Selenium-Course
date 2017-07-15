@@ -27,9 +27,45 @@ Driver.findElement(By.id("contactus"));
 Name works exactly like IDs, however name isn't used as much as IDs by developers. So you may not come across many sites that use the name attribute on elements.
 
 But if you do, they tend to be unique and work exactly the same as ID. Find them by inspecting an element and seeing if the name attribute is used, and then use the By.name method.
-
 ```java
 Driver.findElement(By.name("contactform"));
 ```
 
 ### Class
+Classes are commonly not unique on a page, but sometimes they are, so, it's a useful option to understand. By.class will search all the elements on the page and return you the first one that has the value provided in the class attribute. 
+An important thing to mention with By.class is that you can only ever provide a single class.
+
+```html
+<div class="awesomeness"></div>
+<div class="very awesome"></div>
+<div class="super awesome"></div>
+<div class="awesome"></div> 
+```
+
+If we take the above HTML, and we want to match the second div, we need to use
+```java
+Driver.findElement(By.class("very"));
+```
+If we entered 'very awesome', WebDriver would not find a match, but there is no single class with that value. 'very awesome' is two classes.
+
+If we wanted to get the 4th div, we'd be unable to find is using the By.class method. This is because the 2nd and 3rd div also have the class 'awesome', and WebDriver will return the first match going top down in in the page. So we'd actually get returned the 2nd div.
+
+### TagName
+I very rarely use TagName, but it's very straight forward. This will return your the first element in the page that is of the type you specify. So by TagName we mean the type of element, such as div, p, a, input, form etc.
+
+```html
+<div>
+<form>
+<p>Awesome stuff, followed my more stuff</p>
+<p>This is awesome, for more awesome click <a href="#">here</a></p>
+</form>
+</div>
+```
+
+So if the above code snippet was my whole page and I want to interact with the form, I could use
+```java
+Driver.findElement(By.tagName("form"));
+```
+as it's the only form on the page, means I'll get the correct one. As mentioned though, I use this very rarely, sometimes if a page only has one button I'll use it.
+
+### CSS Selector
