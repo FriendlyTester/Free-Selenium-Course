@@ -23,7 +23,7 @@ public class A_Driver
      *     <li>We can pass the location direct to the Driver instance</li>
      * </ul>
      * Examples of all of the above can be found below
-     **/
+     */
 
     @Test
     public void a_CreateFirefoxDriverGeckoDriverOnPath()
