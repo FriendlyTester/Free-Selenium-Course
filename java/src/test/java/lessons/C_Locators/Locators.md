@@ -69,3 +69,34 @@ Driver.findElement(By.tagName("form"));
 as it's the only form on the page, means I'll get the correct one. As mentioned though, I use this very rarely, sometimes if a page only has one button I'll use it.
 
 ### CSS Selector
+This is the first that is slightly different from the other selectors. CSS Selectors allow us to send a query to WebDriver. So instead of saying find an element by ID, we can be very specific, or instruct WebDriver to follow a pattern. If I can't find an element directly with something unique I'll always turn to a CSS Selector. There isn't an element I can't find with CSS Selectors.
+
+So lets look at an example, as I feel it'll be a lot clearer than me trying to explain. 
+```html
+<div id="awesomediv">
+<form>
+<p class="firstparagraph">Awesome stuff, followed my more stuff</p>
+<p>This is awesome, for more awesome click <a href="#">here</a></p>
+</form>
+</div>
+<div>
+<p>This is awesome, for more awesome click <a href="#">here</a></p>
+</div>
+```
+So lets say the above code is our page, and I want to click the first link. It has no ID, no name, no class, there is another link on the page so I can't use tagname, so I turn to CSS Selector.
+
+A good heuristic in this situation is to ask the question, 'does my parent have anything unique?', and keep asking your self this until the answer is YES! Once you have a yes, you can create your query starting there.  
+So in the case of our code above, the parent of our anchor is a P, but it has nothing unique. Our next parent is a form, which again has nothing unique. Above that though we have a div that has a class.
+
+So we can construct a CSS Selector stating there, it would like this
+```java
+Driver.findElement(By.cssSelector("#awesomediv form p a"));
+```
+So lets see what this actually means. The part is the syntax needed to match by ID, so we are saying find an element with the ID of 'awesomediv', which know is our div. Then look at the children of that div for a form element. That's what the space means, it means look at my children. Then from the form I'm looking for a P element and within that P I'm looking for an anchor.
+
+CSS Selectors are awesome, and very powerful. There is too much for me to list in this post, I may add a more in depth post in the future, but for now here is an awesome game you can play to master CSS Selectors, it's called [FlukeOut](http://flukeout.github.io/).
+
+A nice tip when creating CSS Selectors is to try them out within Chrome DevTools, you can do this in the console window with the following format
+```jshint
+$('#awesomediv form p a');
+```
