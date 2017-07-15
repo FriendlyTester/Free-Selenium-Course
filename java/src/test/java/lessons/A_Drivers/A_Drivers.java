@@ -1,4 +1,4 @@
-package drivers;
+package lessons.A_Drivers;
 
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
@@ -8,7 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
-public class A_Driver
+public class A_Drivers
 {
     /**
      * If you run this test, after putting GeckoDriver in one of the locations mentioned, you should see Firefox open and close again.
