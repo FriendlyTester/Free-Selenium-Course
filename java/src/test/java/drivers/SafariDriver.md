@@ -1,4 +1,4 @@
-##Safari Driver
+## Safari Driver
 
 In order to use the Safari Driver we need to enable a few things within Safari.
 
