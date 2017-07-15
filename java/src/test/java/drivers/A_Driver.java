@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 public class A_Driver
@@ -92,7 +93,7 @@ public class A_Driver
     public void a_CreateIEDriver()
     {
         System.setProperty("webdriver.ie.driver", "C:\\Users\\Richard\\Documents\\WebDriver\\IEDriverService.exe");
-        WebDriver Driver = new EdgeDriver();
+        WebDriver Driver = new InternetExplorerDriver();
         Driver.quit();
     }
 }
