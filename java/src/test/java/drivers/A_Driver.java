@@ -1,3 +1,5 @@
+package drivers;
+
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -7,23 +9,6 @@ import org.openqa.selenium.safari.SafariDriver;
 
 public class A_Driver
 {
-    /**
-     * All the browsers now require a driver in order to send and receive WebDriver commands.
-     * These are now all maintained by the browsers vendors. (IE being the exception)
-     * Chrome - https://sites.google.com/a/chromium.org/chromedriver/downloads
-     * Firefox - https://github.com/mozilla/geckodriver
-     * Edge - https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
-     * SafariDriver - https://developer.apple.com/library/content/releasenotes/General/WhatsNewInSafari/Articles/Safari_10_0.html#//apple_ref/doc/uid/TP40014305-CH11-SW31
-
-     * We have to instruct WebDriver of the locations of these drivers on our machine, we have several options to do this:
-     * <ul>
-     *     <li>PATH - On windows we can add the location of each driver to the PATH</li>
-     *     <li>On A MacOS we can put the driver executable in /usr/bin or /usr/local/bin</li>
-     *     <li>In Java we can set a system porperty to the driver location</li>
-     *     <li>We can pass the location direct to the Driver instance</li>
-     * </ul>
-     * Examples of all of the above can be found below
-     */
 
     @Test
     public void a_CreateFirefoxDriverGeckoDriverOnPath()
