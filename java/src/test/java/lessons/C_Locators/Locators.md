@@ -35,15 +35,13 @@ This is the first that is slightly different from the other selectors. CSS Selec
 
 So lets look at an example, as I feel it'll be a lot clearer than me trying to explain. 
 ```html
-<div id="awesomediv">
-<form>
+<form id="awesomeform">
 <p class="firstparagraph">Awesome stuff, followed my more stuff</p>
 <p>This is awesome, for more awesome click <a href="#">here</a></p>
 </form>
 </div>
 <div>
 <p>This is awesome, for more awesome click <a href="#">here</a></p>
-</div>
 ```
 So lets say the above code is our page, and I want to click the first link. It has no ID, no name, no class, there is another link on the page so I can't use tagname, so I turn to CSS Selector.
 
@@ -52,13 +50,13 @@ So in the case of our code above, the parent of our anchor is a P, but it has no
 
 So we can construct a CSS Selector stating there, it would like this
 ```java
-Driver.findElement(By.cssSelector("#awesomediv form p a"));
+Driver.findElement(By.cssSelector("#awesomeform p a"));
 ```
-So lets see what this actually means. The part is the syntax needed to match by ID, so we are saying find an element with the ID of 'awesomediv', which know is our div. Then look at the children of that div for a form element. That's what the space means, it means look at my children. Then from the form I'm looking for a P element and within that P I'm looking for an anchor.  
+So lets see what this actually means. The first part is the syntax needed to match by ID, so we are saying find an element with the ID of 'awesomeform', which know is our form. Then look at the children of that form for a P element. That's what the space means, it means look at my children. Then from the P I'm looking for a anchor.  
 
 We could also use
 ```java
-Driver.findElement(By.cssSelector("#awesomediv a"));
+Driver.findElement(By.cssSelector("#awesomeform a"));
 ```
 this is where in my opinion CSS Selectors have the advantage over XPaths. This locator would also return the anchor. This is because CSS Selectors will look at all the children looking for a match, not just the immediate child.
   
@@ -69,7 +67,7 @@ A nice tip when creating CSS Selectors is to try them out within Chrome DevTools
 $('#awesomediv form p a');
 ```
 
-### Class
+### ClassName
 Classes are commonly not unique on a page, but sometimes they are, so, it's a useful option to understand. By.class will search all the elements on the page and return you the first one that has the value provided in the class attribute. 
 An important thing to mention with By.class is that you can only ever provide a single class.
 
@@ -82,7 +80,7 @@ An important thing to mention with By.class is that you can only ever provide a 
 
 If we take the above HTML, and we want to match the second div, we need to use
 ```java
-Driver.findElement(By.class("very"));
+Driver.findElement(By.className("very"));
 ```
 If we entered 'very awesome', WebDriver would not find a match, but there is no single class with that value. 'very awesome' is two classes.
 
