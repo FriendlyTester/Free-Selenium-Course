@@ -92,11 +92,61 @@ So we can construct a CSS Selector stating there, it would like this
 ```java
 Driver.findElement(By.cssSelector("#awesomediv form p a"));
 ```
-So lets see what this actually means. The part is the syntax needed to match by ID, so we are saying find an element with the ID of 'awesomediv', which know is our div. Then look at the children of that div for a form element. That's what the space means, it means look at my children. Then from the form I'm looking for a P element and within that P I'm looking for an anchor.
+So lets see what this actually means. The part is the syntax needed to match by ID, so we are saying find an element with the ID of 'awesomediv', which know is our div. Then look at the children of that div for a form element. That's what the space means, it means look at my children. Then from the form I'm looking for a P element and within that P I'm looking for an anchor.  
 
+We could also use
+```java
+Driver.findElement(By.cssSelector("#awesomediv a"));
+```
+this is where in my opinion CSS Selectors have the advantage over XPaths. This locator would also return the anchor. This is because CSS Selectors will look at all the children looking for a match, not just the immediate child.
+  
 CSS Selectors are awesome, and very powerful. There is too much for me to list in this post, I may add a more in depth post in the future, but for now here is an awesome game you can play to master CSS Selectors, it's called [FlukeOut](http://flukeout.github.io/).
 
 A nice tip when creating CSS Selectors is to try them out within Chrome DevTools, you can do this in the console window with the following format
 ```jshint
 $('#awesomediv form p a');
 ```
+
+### LinkText
+This does pretty much exactly what it says, it will look at all the anchor tags on the a page and see if the text of them matches your query.
+```html
+<a href="#">here</a>
+```
+```java
+Driver.findElement(By.linkText("here"));
+```
+It wll return the first one that matches the text. I have actually used this a fair amount, mostly on navigation menus.
+
+### PartialLinkText
+This does pretty much exactly what it says, it will look at all the anchor tags on the a page and see if the text of them partially matches your query.
+```html
+<a href="#">Your Profile</a>
+```
+```java
+Driver.findElement(By.partialLinkText("profile"));
+```
+It wll return the first one that matches the text. 
+
+### XPath
+Why is XPath at the bottom Richard! XPaths are strict. You have to specify each node in the tree, which makes it very fragile, especially in a fast paced product. On the plus side XPaths do allow us to send a query to WebDriver.
+
+Lets take the same example from above 
+```html
+<div id="awesomediv">
+<form>
+<p class="firstparagraph">Awesome stuff, followed my more stuff</p>
+<p>This is awesome, for more awesome click <a href="#">here</a></p>
+</form>
+</div>
+<div>
+<p>This is awesome, for more awesome click <a href="#">here</a></p>
+</div>
+```
+My XPath for this would be
+```java
+Driver.findElement(By.XPath("//*[@id="divprofile"]/form[1]/p[2]/a"));
+```
+First thing to point out, it's proper ugly! But it does exactly the same thing. However it's behaviour is somewhat different. You'll notice the numbers after each element. That numbers represents which child it is.  
+So if we added another P element to the code above the current two Ps, the XPath would break. Because now the P we require is now number 3. This wouldn't break the CSS locator.
+
+XPaths grew to be very popular because they were commonly used with Selenium IDE and also most browsers have an option on an inspected element to 'Copy XPath'. Now sure this is nice and quick, but it's very important to understand the locator, and make a judgement on it's liklihood to be impacted by the rest of the page. If it's a really long XPath query on a page which sees a lot of change, XPath would not be a good choice. 
