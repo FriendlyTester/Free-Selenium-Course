@@ -9,13 +9,12 @@ import org.openqa.selenium.safari.SafariDriver;
 
 public class A_Driver
 {
-
     @Test
     public void a_CreateFirefoxDriverGeckoDriverOnPath()
     {
         //FirefoxDriver requires GeckoDriver, in order to allow Selenium to drive Firefox.
-        //I've made this test work by placing the GeckoDriver in to the /usr/bin folder. This is one of the places on a mac that Selenium will automatically look for it
-        //You'll need to download the latest GeckoDriver from here
+        //You'll need to download the GeckoDriver.
+        //On a windows machine you'll need to add the path to the driver to your windows [PATH](https://stackoverflow.com/questions/44272416/how-to-add-a-folder-to-path-environment-variable-in-windows-10-with-screensho)
         WebDriver Driver = new FirefoxDriver();
         //Driver.quit();
     }
