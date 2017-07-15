@@ -9,55 +9,59 @@ import org.openqa.selenium.safari.SafariDriver;
 
 public class A_Driver
 {
+    /**
+     * If you run this test, after putting GeckoDriver in one of the locations mentioned, you should see Firefox open and close again
+     */
     @Test
     public void a_CreateFirefoxDriverGeckoDriverOnPath()
     {
         //FirefoxDriver requires GeckoDriver, in order to allow Selenium to drive Firefox.
         //You'll need to download the GeckoDriver.
-        //On a windows machine you'll need to add the path to the driver to your windows [PATH](https://stackoverflow.com/questions/44272416/how-to-add-a-folder-to-path-environment-variable-in-windows-10-with-screensho)
-        //<a href="https://stackoverflow.com/questions/44272416/how-to-add-a-folder-to-path-environment-variable-in-windows-10-with-screensho">Link</a>
-        WebDriver Driver = new FirefoxDriver();
-        //Driver.quit();
-    }
+        //Selenium will automatically look for GeckoDriver in the following locations
+        //On a windows machine you'll need to add the path to the driver to your windows environment PATH
+        //On a mac you can copy the executable to /usr/bin or /usr/bin/local folder
 
-    @Test
-    public void a_CreateFirefoxDriverGeckoDriverUsrLocalBin()
-    {
-        //I've made this test work by placing the GeckoDriver in to the /usr/local/bin folder.
-        //This is also one of the places on a mac that Selenium will automatically look for it
-        //Use this if you don't have access to /usr/bin
+        //This line will then create you a new Firefox Driver instance
         WebDriver Driver = new FirefoxDriver();
+        //This instructs Selenium to close the browser and kill the driver.
         Driver.quit();
     }
 
-    @Test
-    public void a_CreateFirefoxDriverGeckoDriverPATH()
-    {
-        //On a windows machine we can add GeckoDriver to the environment PATH
-        //The PATH is a place Selenium will automatically look for the drivers
-        WebDriver Driver = new FirefoxDriver();
-        Driver.quit();
-    }
-
+    /**
+     * Another option with Java is to set a system property to define where the Driver is.
+     * Selenium will then automatically look to see if this is set.
+     * The predefined format for these properties is 'webdriver.{{driver name}}.driver
+     * So in the case of Firefox we need to set GeckoDriver.
+     * On my machine I've download GeckoDriver to my downloads folder
+     * Again if you run this test, Firefox will just open and close.
+     */
     @Test
     public void a_CreateFirefoxDriverGeckoDriverUsingSystemProperty()
     {
-        //Instead of putting the driver in a place Selenium will look for it, we can specifically tell it where to look for the driver
+        //This sets the property along with the specified value
         System.setProperty("webdriver.gecko.driver", "/Users/richard/Downloads/geckodriver");
         WebDriver Driver = new FirefoxDriver();
         Driver.quit();
     }
 
+    /**
+     * The same applies to Chrome. Download ChromeDriver (location is in the readme)
+     * Then do one of the above methods, add it to your PATH, a bin folder or set the system property using 'webdriver.chrome.driver'
+     *
+     * If you run this test, after putting ChromeDriver in one of the locations mentioned, you should see Chrome open and close again
+     */
     @Test
     public void a_CreateChromeDriver()
     {
-        //Just like with Firefox, you need a driver to make Chrome work with Selenium.
-        //You can download it from here -
-        //You can place ChromeDriver is all the same places as above to make it work with Selenium
+        //This line will create you a new instance of the ChromeDriver.
         WebDriver Driver = new ChromeDriver();
         Driver.quit();
     }
 
+    /**
+     * The official Safari Driver only works on a Mac and from Safari 10+
+     * You need to
+     */
     @Test
     public void a_CreateSafariDriver()
     {
