@@ -1,6 +1,8 @@
+##Drivers
+
 All the browsers now require a driver in order to send and receive WebDriver commands.<br>
 These are now all maintained by the browsers vendors (IE being the exception). <br>
-You can find the drivers here:
+You can find the drivers here (make sure you download the right bit for you machine, 32 or 64):
  * [Chrome](https://sites.google.com/a/chromium.org/chromedriver/downloads)
  * [Firefox](https://github.com/mozilla/geckodriver/releases)
  * [Edge](https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/)
