@@ -18,6 +18,7 @@ public class C_Locators
     public void c_SingleElementAllLocators()
     {
         WebDriver Driver = new ChromeDriver();
+        Driver.manage().window().maximize();
         Driver.navigate().to("https://thefriendlytester.co.uk/selenium/locators");
 
         //Find the Form using ID
@@ -78,6 +79,7 @@ public class C_Locators
     public void NoSuchElementExceptionExample()
     {
         WebDriver Driver = new ChromeDriver();
+        Driver.manage().window().maximize();
         Driver.navigate().to("https://thefriendlytester.co.uk/selenium/locators");
 
         //So if you investigate the above page you'll see that there is no element with this ID, so it should throw an error

@@ -10,6 +10,10 @@ public class B_Navigation
     public void b_navigation() throws InterruptedException { //Explain InterruptedException
         //Start a new instance of Chrome
         WebDriver Driver = new ChromeDriver();
+
+        //We're going to look at manage() later in the course, but for now this line will maximise the browser window
+        Driver.manage().window().maximize();
+
         //Navigate to an awesome blog
         Driver.navigate().to("https://www.thefriendlytester.co.uk");
         //We're using implicitWaits here just too help us see the navigation, please don't use these :D
