@@ -1,6 +1,6 @@
 ## Lesson 5 - Screenshots
 
-[Code](/E_Screenshots.java)
+[Code](../E_Screenshots/E_Screenshots.java)
 
 Now we can navigate to sites, and interaction with them to repeat behaviour, we may want to see what the screen looks like every now and again.  
 It's important to remember that WebDriver doesn't visually check your site. Your site could be a complete mess and your checks still be passing.
