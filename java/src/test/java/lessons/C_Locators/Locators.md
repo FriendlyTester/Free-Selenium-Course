@@ -1,4 +1,7 @@
 ## Lesson 3 - Locators
+
+[**Full Code Examples**](../C_Locators/C_Locators.java)
+
 Arguably one of the most important skills when it comes to automating Web Applications is finding good realiable locators. I consider it a real skill.   
 
 A locator is a query that results in 1-N elements being returned to you, majority of the time it'll be a single element. An element being a HTML element from the page such as a input field or an anchor. We can then do actions on the element in order to automate the behaviour we are trying to implement, such as clicking and populating fields.
