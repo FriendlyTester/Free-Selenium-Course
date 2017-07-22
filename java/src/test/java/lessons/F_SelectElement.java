@@ -1,4 +1,4 @@
-package lessons.F_SelectElement;
+package lessons;
 
 import org.junit.Test;
 import org.openqa.selenium.By;

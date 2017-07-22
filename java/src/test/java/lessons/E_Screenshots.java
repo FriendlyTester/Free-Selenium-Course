@@ -1,4 +1,4 @@
-package lessons.E_Screenshots;
+package lessons;
 
 import org.apache.commons.io.FileUtils;
 import org.junit.Test;

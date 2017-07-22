@@ -1,4 +1,4 @@
-package lessons.B_Navigation;
+package lessons;
 
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;

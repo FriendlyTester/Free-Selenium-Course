@@ -1,4 +1,4 @@
-package lessons.A_Drivers;
+package lessons;
 
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;

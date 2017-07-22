@@ -1,4 +1,4 @@
-package lessons.D_Interactions;
+package lessons;
 
 import org.junit.Assert;
 import org.junit.Test;
