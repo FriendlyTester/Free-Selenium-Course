@@ -5,9 +5,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 
 public class G_Waits
 {
@@ -69,6 +73,13 @@ public class G_Waits
         //Selenium provide us with an object call WebDriverWait.
         //This object takes a Driver, and an int. That int is the amount of time to wait in seconds.
         WebDriverWait wait = new WebDriverWait(Driver, 5);
+
+        //We can set how often we want WebDriver to check if our condition is met
+        wait.pollingEvery(250, TimeUnit.MILLISECONDS);
+
+        //We can add a custom message. WebDriver will show this message if the wait times out.
+        //A good contextual message here can really aid with debugging
+        wait.withMessage("Timed out waiting for the password field");
 
         //So this check will eventually timeout. It will timeout after spending 5 seconds looking for an element with the ID of password.
         //The Selenium team have provided us with a huge range of ExpectedConditions.
