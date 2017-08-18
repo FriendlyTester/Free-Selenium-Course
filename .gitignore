@@ -12,4 +12,5 @@ hs_err_pid*
 
 /.idea
 /java/.idea
+/java/target
 *.iml
