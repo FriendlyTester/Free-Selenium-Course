@@ -18,7 +18,7 @@ public class E_Screenshots
     {
         WebDriver Driver = new ChromeDriver();
         Driver.manage().window().maximize();
-        Driver.navigate().to("https://thefriendlytester.co.uk/selenium/locators");
+        Driver.navigate().to("https://thefriendlytester.co.uk/selenium/testpage");
 
         //This code may look complicated, and based on what we've done so far, it is. But let's walk over it.
         //We start by creating a File object. This is object from the Java library. Basically a class representation of a file on your disk

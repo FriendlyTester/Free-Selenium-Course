@@ -17,7 +17,7 @@ public class D_Interactions
     {
         WebDriver Driver = new ChromeDriver();
         Driver.manage().window().maximize();
-        Driver.navigate().to("https://thefriendlytester.co.uk/selenium/locators");
+        Driver.navigate().to("https://thefriendlytester.co.uk/selenium/testpage");
 
         //We are going find a H2 element on the page, ask WebDriver to read it's text, and ask Java to write it to the console
         //getText() will read the all the text between the open and close tags of the element
@@ -54,7 +54,7 @@ public class D_Interactions
         WebDriver Driver = new ChromeDriver();
         Driver.manage().window().maximize();
         //Navigate to a Website.
-        Driver.navigate().to("https://thefriendlytester.co.uk/selenium/locators");
+        Driver.navigate().to("https://thefriendlytester.co.uk/selenium/testpage");
 
         //Read the url of the page.
         System.out.println(Driver.getCurrentUrl());

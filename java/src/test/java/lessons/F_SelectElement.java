@@ -15,7 +15,7 @@ public class F_SelectElement
     @Test
     public void f_SelectSingleOptionByText() {
         WebDriver Driver = new ChromeDriver();
-        Driver.navigate().to("https://thefriendlytester.co.uk/selenium/locators/");
+        Driver.navigate().to("https://thefriendlytester.co.uk/selenium/testpage");
 
         //Create a new Select object called SelGender, we have to pass in a WebElement as a parameter.
         //We know from lesson 3 that findElement() returns a WebElement object, so we can pass that call as the parameter
@@ -34,7 +34,7 @@ public class F_SelectElement
     @Test
     public void f_SelectSingleOptionByValue() {
         WebDriver Driver = new ChromeDriver();
-        Driver.navigate().to("https://thefriendlytester.co.uk/selenium/locators/");
+        Driver.navigate().to("https://thefriendlytester.co.uk/selenium/testpage");
 
         Select selGender = new Select(Driver.findElement(By.id("gender")));
 
@@ -48,7 +48,7 @@ public class F_SelectElement
     public void f_IsMultiple()
     {
         WebDriver Driver = new ChromeDriver();
-        Driver.navigate().to("https://thefriendlytester.co.uk/selenium/locators/");
+        Driver.navigate().to("https://thefriendlytester.co.uk/selenium/testpage");
 
         //If we visit the site above we can inspect the Gender dropdown and see it's not a multi-select
         //So we'll see false here
@@ -66,7 +66,7 @@ public class F_SelectElement
     @Test
     public void f_SelectMultipleOptions() {
         WebDriver Driver = new ChromeDriver();
-        Driver.navigate().to("https://thefriendlytester.co.uk/selenium/locators/");
+        Driver.navigate().to("https://thefriendlytester.co.uk/selenium/testpage");
 
         Select selContinent = new Select(Driver.findElement(By.id("continent")));
 
@@ -93,7 +93,7 @@ public class F_SelectElement
     @Test
     public void f_SelectMultipleOptionsDeselectSome() {
         WebDriver Driver = new ChromeDriver();
-        Driver.navigate().to("https://thefriendlytester.co.uk/selenium/locators/");
+        Driver.navigate().to("https://thefriendlytester.co.uk/selenium/testpage");
 
         Select selContinent = new Select(Driver.findElement(By.id("continent")));
 

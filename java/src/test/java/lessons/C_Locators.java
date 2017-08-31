@@ -19,7 +19,7 @@ public class C_Locators
     {
         WebDriver Driver = new ChromeDriver();
         Driver.manage().window().maximize();
-        Driver.navigate().to("https://thefriendlytester.co.uk/selenium/locators");
+        Driver.navigate().to("https://thefriendlytester.co.uk/selenium/testpage");
 
         //Find the Form using ID
         //The FindElement returns a WebElement object if it finds a match, we are assigning that to our own object called formById
@@ -60,7 +60,7 @@ public class C_Locators
     public void MultipleElements()
     {
         WebDriver Driver = new ChromeDriver();
-        Driver.navigate().to("https://thefriendlytester.co.uk/selenium/locators");
+        Driver.navigate().to("https://thefriendlytester.co.uk/selenium/testpage");
 
         //The find elements method on the Driver will return you a List of WebElements.
         //So we've created our own list called 'inputs' to assign the response from the Driver.
@@ -80,7 +80,7 @@ public class C_Locators
     {
         WebDriver Driver = new ChromeDriver();
         Driver.manage().window().maximize();
-        Driver.navigate().to("https://thefriendlytester.co.uk/selenium/locators");
+        Driver.navigate().to("https://thefriendlytester.co.uk/selenium/testpage");
 
         //So if you investigate the above page you'll see that there is no element with this ID, so it should throw an error
         WebElement ElementByID = Driver.findElement(By.id("loginBox"));

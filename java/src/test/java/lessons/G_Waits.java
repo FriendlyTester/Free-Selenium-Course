@@ -28,7 +28,7 @@ public class G_Waits
         //Therefore we need to handle it, or instruct our own code to throw the exception if it indeed happens.
 
         WebDriver Driver = new ChromeDriver();
-        Driver.navigate().to("https://thefriendlytester.co.uk/selenium/locators");
+        Driver.navigate().to("https://thefriendlytester.co.uk/selenium/testpage");
 
         //As mentioned above, this doesn't what you think. It sends your code to sleep for the provided value.
         //The value is in milliseconds. So 5000, is 5 seconds.
@@ -47,7 +47,7 @@ public class G_Waits
     public void g_ImplicitWaitDriverTimeout() throws InterruptedException {
 
         WebDriver Driver = new ChromeDriver();
-        Driver.navigate().to("https://thefriendlytester.co.uk/selenium/locators");
+        Driver.navigate().to("https://thefriendlytester.co.uk/selenium/testpage");
 
         //This tell WebDriver how long to keep trying a command for, until it gets a successful response.
         Driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -68,7 +68,7 @@ public class G_Waits
     {
         //Start a Firefox Instance
         WebDriver Driver = new ChromeDriver();
-        Driver.navigate().to("https://thefriendlytester.co.uk/selenium/locators");
+        Driver.navigate().to("https://thefriendlytester.co.uk/selenium/testpage");
 
         //Selenium provide us with an object call WebDriverWait.
         //This object takes a Driver, and an int. That int is the amount of time to wait in seconds.
@@ -100,7 +100,7 @@ public class G_Waits
     {
         //Start a Firefox Instance
         WebDriver Driver = new ChromeDriver();
-        Driver.navigate().to("https://thefriendlytester.co.uk/selenium/locators");
+        Driver.navigate().to("https://thefriendlytester.co.uk/selenium/testpage");
 
         Driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
