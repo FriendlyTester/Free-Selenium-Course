@@ -15,31 +15,31 @@ public class D_Interactions
     @Test
     public void d_SimpleInteractions()
     {
-        WebDriver Driver = new ChromeDriver();
-        Driver.manage().window().maximize();
-        Driver.navigate().to("https://automationintesting.com/selenium/testpage");
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.navigate().to("https://automationintesting.com/selenium/testpage");
 
         //We are going find a H2 element on the page, ask WebDriver to read it's text, and ask Java to write it to the console
         //getText() will read the all the text between the open and close tags of the element
-        System.out.println(Driver.findElement(By.tagName("h2")).getText());
+        System.out.println(driver.findElement(By.tagName("h2")).getText());
 
         //We are going to find the First Name field, and ask WebDriver to enter 'Richard' into it
         //sendKeys() give us many options but for this stage, we are going to pass in the string 'Richard'
-        Driver.findElement(By.id("firstname")).sendKeys("richard");
+        driver.findElement(By.id("firstname")).sendKeys("richard");
 
         //We are going to ask WebDriver to read us the value within the Firstname field
         //We do this using getAttribute() we can actually be used to read any attribute of a HTML element
-        System.out.println(Driver.findElement(By.id("firstname")).getAttribute("value"));
+        System.out.println(driver.findElement(By.id("firstname")).getAttribute("value"));
 
         //In this line we are asking WebDriver to read the name attribute of the form element
-        System.out.println(Driver.findElement(By.id("contactus")).getAttribute("name"));
+        System.out.println(driver.findElement(By.id("contactus")).getAttribute("name"));
 
         //Click on the submit button, the one titled 'I do nothing!'
         //The click() method will attempt to click any element, but will only succeed if the element is visible.
         //WebDriver will scroll the page if needed in order to click a visible element
-        Driver.findElement(By.id("submitbutton")).click();
+        driver.findElement(By.id("submitbutton")).click();
 
-        Driver.quit();
+        driver.quit();
     }
 
     /**
@@ -51,16 +51,16 @@ public class D_Interactions
     public void d_DriverInteractions()
     {
         //Start a Firefox Instance
-        WebDriver Driver = new ChromeDriver();
-        Driver.manage().window().maximize();
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
         //Navigate to a Website.
-        Driver.navigate().to("https://automationintesting.com/selenium/testpage");
+        driver.navigate().to("https://automationintesting.com/selenium/testpage");
 
         //Read the url of the page.
-        System.out.println(Driver.getCurrentUrl());
+        System.out.println(driver.getCurrentUrl());
         //Read the page title/tab title
-        System.out.println(Driver.getTitle());
+        System.out.println(driver.getTitle());
 
-        Driver.quit();
+        driver.quit();
     }
 }

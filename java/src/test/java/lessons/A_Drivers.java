@@ -16,10 +16,10 @@ public class A_Drivers
     @Test
     public void a_CreateFirefoxDriverGeckoDriverOnPath()
     {
-        //This line will then create you a new Firefox Driver instance.
-        WebDriver Driver = new FirefoxDriver();
+        //This line will then create you a new Firefox driver instance.
+        WebDriver driver = new FirefoxDriver();
         //This instructs Selenium to close the browser and kill the driver.
-        Driver.quit();
+        driver.quit();
     }
 
     /**
@@ -30,8 +30,8 @@ public class A_Drivers
     {
         //This sets the property along with the specified value, change this for where you've put the driver
         System.setProperty("webdriver.gecko.driver", "/Users/richard/Downloads/geckodriver");
-        WebDriver Driver = new FirefoxDriver();
-        Driver.quit();
+        WebDriver driver = new FirefoxDriver();
+        driver.quit();
     }
 
     /**
@@ -41,11 +41,11 @@ public class A_Drivers
     public void a_CreateChromeDriver()
     {
         //This line will create you a new instance of the ChromeDriver.
-        WebDriver Driver = new ChromeDriver();
+        WebDriver driver = new ChromeDriver();
 
 
 
-        Driver.quit();
+        driver.quit();
     }
 
     /**
@@ -54,8 +54,8 @@ public class A_Drivers
     @Test
     public void a_CreateSafariDriver()
     {
-        WebDriver Driver = new SafariDriver();
-        Driver.quit();
+        WebDriver driver = new SafariDriver();
+        driver.quit();
     }
 
     /**
@@ -65,8 +65,8 @@ public class A_Drivers
     public void a_CreateEdgeDriver()
     {
         System.setProperty("webdriver.edge.driver", "C:\\Users\\Richard\\Documents\\WebDriver\\MicrosoftWebDriver.exe");
-        WebDriver Driver = new EdgeDriver();
-        Driver.quit();
+        WebDriver driver = new EdgeDriver();
+        driver.quit();
     }
 
     /**
@@ -76,7 +76,11 @@ public class A_Drivers
     public void a_CreateIEDriver()
     {
         System.setProperty("webdriver.ie.driver", "C:\\Users\\Richard\\Documents\\WebDriver\\IEDriverService.exe");
-        WebDriver Driver = new InternetExplorerDriver();
-        Driver.quit();
+        WebDriver driver = new InternetExplorerDriver();
+        driver.quit();
     }
+
+    //There is a library you can use called WebDriverManager that will do all the setProperty stuff for you.
+    //You can find that here - https://github.com/bonigarcia/webdrivermanager
+    //But it's important for you to understand how it works, and not to blindly relay on libraries. 
 }

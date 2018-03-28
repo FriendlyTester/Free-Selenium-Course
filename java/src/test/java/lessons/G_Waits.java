@@ -27,14 +27,14 @@ public class G_Waits
         //First think you will see is the InterruptedException. We have to add this, as Thread.sleep() has the potential to throw this exception.
         //Therefore we need to handle it, or instruct our own code to throw the exception if it indeed happens.
 
-        WebDriver Driver = new ChromeDriver();
-        Driver.navigate().to("https://automationintesting.com/selenium/testpage");
+        WebDriver driver = new ChromeDriver();
+        driver.navigate().to("https://automationintesting.com/selenium/testpage");
 
         //As mentioned above, this doesn't what you think. It sends your code to sleep for the provided value.
         //The value is in milliseconds. So 5000, is 5 seconds.
         Thread.sleep(5000);
 
-        Driver.quit();
+        driver.quit();
     }
 
     /**
@@ -46,14 +46,14 @@ public class G_Waits
     @Test
     public void g_ImplicitWaitDriverTimeout() throws InterruptedException {
 
-        WebDriver Driver = new ChromeDriver();
-        Driver.navigate().to("https://automationintesting.com/selenium/testpage");
+        WebDriver driver = new ChromeDriver();
+        driver.navigate().to("https://automationintesting.com/selenium/testpage");
 
         //This tell WebDriver how long to keep trying a command for, until it gets a successful response.
-        Driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        Driver.findElement(By.id("ThisIsNotReal"));
-        Driver.quit();
+        driver.findElement(By.id("ThisIsNotReal"));
+        driver.quit();
     }
 
     /**
@@ -67,12 +67,12 @@ public class G_Waits
     public void g_ExplicitWaits()
     {
         //Start a Firefox Instance
-        WebDriver Driver = new ChromeDriver();
-        Driver.navigate().to("https://automationintesting.com/selenium/testpage");
+        WebDriver driver = new ChromeDriver();
+        driver.navigate().to("https://automationintesting.com/selenium/testpage");
 
         //Selenium provide us with an object call WebDriverWait.
         //This object takes a Driver, and an int. That int is the amount of time to wait in seconds.
-        WebDriverWait wait = new WebDriverWait(Driver, 5);
+        WebDriverWait wait = new WebDriverWait(driver, 5);
 
         //We can set how often we want WebDriver to check if our condition is met
         wait.pollingEvery(250, TimeUnit.MILLISECONDS);
@@ -86,7 +86,7 @@ public class G_Waits
         //If you type ExepectionConditions followed by a . intelliSense will show you all the options
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("password")));
 
-        Driver.quit();
+        driver.quit();
     }
 
     /**
@@ -99,14 +99,14 @@ public class G_Waits
     public void g_ExplicitWaitsWithImplicitWaits()
     {
         //Start a Firefox Instance
-        WebDriver Driver = new ChromeDriver();
-        Driver.navigate().to("https://automationintesting.com/selenium/testpage");
+        WebDriver driver = new ChromeDriver();
+        driver.navigate().to("https://automationintesting.com/selenium/testpage");
 
-        Driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        WebDriverWait wait = new WebDriverWait(Driver, 5);
+        WebDriverWait wait = new WebDriverWait(driver, 5);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("password")));
 
-        Driver.quit();
+        driver.quit();
     }
 }

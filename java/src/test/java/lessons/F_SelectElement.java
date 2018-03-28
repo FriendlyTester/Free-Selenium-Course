@@ -14,12 +14,12 @@ public class F_SelectElement
 
     @Test
     public void f_SelectSingleOptionByText() {
-        WebDriver Driver = new ChromeDriver();
-        Driver.navigate().to("https://automationintesting.com/selenium/testpage");
+        WebDriver driver = new ChromeDriver();
+        driver.navigate().to("https://automationintesting.com/selenium/testpage");
 
         //Create a new Select object called SelGender, we have to pass in a WebElement as a parameter.
         //We know from lesson 3 that findElement() returns a WebElement object, so we can pass that call as the parameter
-        Select selGender = new Select(Driver.findElement(By.id("gender")));
+        Select selGender = new Select(driver.findElement(By.id("gender")));
 
         //Ask WebDriver to see if there is an option with the text of 'My Business!'
         selGender.selectByVisibleText("My Business!");
@@ -28,20 +28,20 @@ public class F_SelectElement
         //We know this select is NOT a multiple, so there will only be one selected, therefore it will return us the selected option.
         System.out.println(selGender.getFirstSelectedOption().getText());
 
-        Driver.quit();
+        driver.quit();
     }
 
     @Test
     public void f_SelectSingleOptionByValue() {
-        WebDriver Driver = new ChromeDriver();
-        Driver.navigate().to("https://automationintesting.com/selenium/testpage");
+        WebDriver driver = new ChromeDriver();
+        driver.navigate().to("https://automationintesting.com/selenium/testpage");
 
-        Select selGender = new Select(Driver.findElement(By.id("gender")));
+        Select selGender = new Select(driver.findElement(By.id("gender")));
 
         selGender.selectByValue("my_business");
         System.out.println(selGender.getFirstSelectedOption().getText());
 
-        Driver.quit();
+        driver.quit();
     }
 
     @Test
@@ -65,10 +65,10 @@ public class F_SelectElement
 
     @Test
     public void f_SelectMultipleOptions() {
-        WebDriver Driver = new ChromeDriver();
-        Driver.navigate().to("https://automationintesting.com/selenium/testpage");
+        WebDriver driver = new ChromeDriver();
+        driver.navigate().to("https://automationintesting.com/selenium/testpage");
 
-        Select selContinent = new Select(Driver.findElement(By.id("continent")));
+        Select selContinent = new Select(driver.findElement(By.id("continent")));
 
         //As we can see in the above check, we know continent is a multi-select, so let's select two options
         selContinent.selectByVisibleText("Africa");
@@ -87,15 +87,15 @@ public class F_SelectElement
             System.out.println(element.getText());
         }
 
-        Driver.quit();
+        driver.quit();
     }
 
     @Test
     public void f_SelectMultipleOptionsDeselectSome() {
-        WebDriver Driver = new ChromeDriver();
-        Driver.navigate().to("https://automationintesting.com/selenium/testpage");
+        WebDriver driver = new ChromeDriver();
+        driver.navigate().to("https://automationintesting.com/selenium/testpage");
 
-        Select selContinent = new Select(Driver.findElement(By.id("continent")));
+        Select selContinent = new Select(driver.findElement(By.id("continent")));
 
         selContinent.selectByVisibleText("Africa");
         selContinent.selectByVisibleText("Europe");
@@ -123,6 +123,6 @@ public class F_SelectElement
             System.out.println(element.getText());
         }
 
-        Driver.quit();
+        driver.quit();
     }
 }
